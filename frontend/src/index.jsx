@@ -8,7 +8,9 @@ const getWeatherFromApi = async () => {
     const response = await fetch(`${baseURL}/weather`);
     return response.json();
   } catch (error) {
-    console.error(error);
+    // Disabling ESLint no-console, for easy error handling
+    // TODO: Implement error-state with message div on page
+    console.error(error); // eslint-disable-line no-console
   }
 
   return {};
@@ -19,13 +21,13 @@ class Weather extends React.Component {
     super(props);
 
     this.state = {
-      icon: "",
+      icon: '',
     };
   }
 
   async componentDidMount() {
     const weather = await getWeatherFromApi();
-    this.setState({icon: weather.icon.slice(0, -1)});
+    this.setState({ icon: weather.icon.slice(0, -1) });
   }
 
   render() {
@@ -33,7 +35,7 @@ class Weather extends React.Component {
 
     return (
       <div className="icon">
-        { icon && <img src={`/img/${icon}.svg`} /> }
+        { icon && <img src={`/img/${icon}.svg`} alt="Weather icon" /> }
       </div>
     );
   }
@@ -41,5 +43,5 @@ class Weather extends React.Component {
 
 ReactDOM.render(
   <Weather />,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
