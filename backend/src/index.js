@@ -1,39 +1,42 @@
-const debug = require('debug')('weathermap');
+// Removed for ESLint reasons
+// const debug = require('debug',)('weathermap',);
 
-const Koa = require('koa');
-const router = require('koa-router')();
-const fetch = require('node-fetch');
-const cors = require('kcors');
+const Koa = require('koa',);
+const router = require('koa-router',)();
+const fetch = require('node-fetch',);
+const cors = require('kcors',);
 
-require('dotenv').config()
+require('dotenv',).config();
 
 const appId = process.env.APPID || '';
-const mapURI = process.env.MAP_ENDPOINT || "http://api.openweathermap.org/data/2.5";
-const targetCity = process.env.TARGET_CITY || "Helsinki,fi";
+const mapURI = process.env.MAP_ENDPOINT || 'http://api.openweathermap.org/data/2.5';
+const targetCity = process.env.TARGET_CITY || 'Helsinki,fi';
 
 const port = process.env.PORT || 9000;
 
 const app = new Koa();
 
-app.use(cors());
+app.use(cors(),);
 
 const fetchWeather = async () => {
   const endpoint = `${mapURI}/weather?q=${targetCity}&appid=${appId}&`;
-  const response = await fetch(endpoint);
+  const response = await fetch(endpoint,);
 
-  return response ? response.json() : {}
+  return response ? response.json() : {};
 };
 
-router.get('/api/weather', async ctx => {
+// Can't run with dangling comma, disabled ESLint for following line
+router.get('/api/weather', async ctx => { // eslint-disable-line comma-dangle
   const weatherData = await fetchWeather();
 
   ctx.type = 'application/json; charset=utf-8';
   ctx.body = weatherData.weather ? weatherData.weather[0] : {};
-});
+},
+);
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+app.use(router.routes(),);
+app.use(router.allowedMethods(),);
 
-app.listen(port);
+app.listen(port,);
 
-console.log(`App listening on port ${port}`);
+console.log(`App listening on port ${port}`,);
