@@ -22,20 +22,28 @@ class Weather extends React.Component {
 
     this.state = {
       icon: '',
+      weatherText: '',
     };
   }
 
   async componentDidMount() {
     const weather = await getWeatherFromApi();
-    this.setState({ icon: weather.icon.slice(0, -1) });
+    this.setState({
+      icon: weather.icon.slice(0, -1),
+      weatherText: weather.main,
+    });
   }
 
   render() {
-    const { icon } = this.state;
+    const { icon, weatherText } = this.state;
 
     return (
-      <div className="icon">
-        { icon && <img src={`/img/${icon}.svg`} alt="Weather icon" /> }
+      <div>
+        { // eslint-disable-next-line
+        }<h1>The weather right now in Helsinki is { weatherText.toLowerCase() }!</h1>
+        <div className="icon">
+          { icon && <img src={`/img/${icon}.svg`} alt="Weather icon" /> }
+        </div>
       </div>
     );
   }
