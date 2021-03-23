@@ -1,10 +1,10 @@
 FROM node:15-alpine
 
 # Creating app directory
-WORKDIR /weatherapp
+WORKDIR /weatherapp-frontend
 
 # Installing app dependencies
-COPY . /weatherapp
+COPY . /weatherapp-frontend
 RUN npm install
 
 # Binding frontend port
