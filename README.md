@@ -1,5 +1,6 @@
 # Eficode Weatherapp (Summer job 2021)
 This is my submission repository for the Eficode summer job 2021 coding assignment
+My version running on an AWS server can be found [here!](http://13.48.27.231:8000/) with the [backend API runnning here](http://13.48.27.231:9000/api/weather)
 
 Assignments and other provided info is found in [here!](./assignment.md)
 
@@ -96,3 +97,6 @@ Bring down the docker-compose with `Ctrl-C`. If you are running docker-compose i
 ```
 $ docker-compose down
 ```
+
+
+## Infrastructure
