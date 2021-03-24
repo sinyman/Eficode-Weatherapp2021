@@ -100,3 +100,4 @@ $ docker-compose down
 
 
 ## Infrastructure
+The application is a simple service consisting of a React.js frontend and a Node.js Koa backend running in 2 different Docker containers, all orchestrated by Docker-compose. The frontend fetches weatherdata from the API running in the backend, which in turn presents the data it gets from [OpenWeatherMap APIs.](https://openweathermap.org/api)
