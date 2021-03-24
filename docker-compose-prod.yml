@@ -5,7 +5,8 @@ version: '3'
 services:
   frontend:
     command: npm start
-    build: ./frontend
+    # Alternatively build your own images as you go with "build:"
+    image: sinyman/weatherapp_frontend:2
     ports:
       - '8000:8000'
     env_file:
@@ -14,8 +15,9 @@ services:
       - backend
 
   backend:
-    build: ./backend
     command: npm start
+    # Alternatively build your own images as you go with "build:"
+    image: sinyman/weatherapp_backend:2
     ports:
       - '9000:9000'
     env_file:
