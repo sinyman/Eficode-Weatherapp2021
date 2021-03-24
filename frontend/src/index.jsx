@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Getting environment data
 const baseURL = process.env.ENDPOINT;
 
 const getWeatherFromApi = async () => {
@@ -22,10 +23,11 @@ class Weather extends React.Component {
 
     this.state = {
       icon: '',
-      weatherText: '',
+      weatherText: '', // More descriptive text of weather conditions
     };
   }
 
+  // Populate the site with data as it mounts
   async componentDidMount() {
     const weather = await getWeatherFromApi();
     this.setState({
@@ -40,7 +42,7 @@ class Weather extends React.Component {
     return (
       <div>
         { // eslint-disable-next-line
-        }<h1>The weather right now in Helsinki is { weatherText.toLowerCase() }!</h1>
+        }{ weatherText && <h1>The weather right now in Helsinki is { weatherText.toLowerCase() }!</h1>}
         <div className="icon">
           { icon && <img src={`/img/${icon}.svg`} alt="Weather icon" /> }
         </div>
