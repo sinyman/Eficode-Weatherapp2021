@@ -33,7 +33,7 @@ Both the backend and the frontend have their own Dockerfiles that server for bui
 ```
 $ docker build -t {tagname} .
 ```
-in either directory will create an image of that service, that can later be pushed to [DockerHub](https://www.hub.docker.com) and used in a production environment. More info about that [here!](https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20))</br>
+in either directory will create an image of that service, that can later be pushed to [DockerHub](https://hub.docker.com/) and used in a production environment. More info about that [here!](https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20))</br>
 </br>
 
 ### Production
