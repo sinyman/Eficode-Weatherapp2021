@@ -18,3 +18,5 @@ services:
     command: npm start
     ports:
       - '9000:9000'
+    env_file:
+    - .backend.env
