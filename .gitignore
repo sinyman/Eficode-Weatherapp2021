@@ -9,4 +9,5 @@ node_modules
 
 # Environment variables
 .prod-variables.env
+.backend.env
 
