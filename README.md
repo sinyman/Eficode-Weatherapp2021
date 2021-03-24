@@ -11,9 +11,9 @@ Assignments and other provided info is found in [here!](./assignment.md)
 ### Development
 When developing it is recommended to clone the source code to your local machine.
 
-Firstly, place your OWM API-key in an env-file in the backend; [An example .env file](./backend/.env.example) showing preferred syntax is found in the backend folder. Copy this file and create a file called ".env" where you place your API-key and other environment related data.
+Firstly, place your OWM API-key in a .backend.env-file ; Here is [an example .backend.env file](./backend/.env.example) showing preferred syntax. Copy this file and create a file called ".backend.env" where you place your API-key and other environment related data.
 
-A in the root of this repository is a [basic docker-compose.yml file] that will build images of the code and setup a development server with container hot reload locally. The development environment can be started with the following command:
+A in the root of this repository is a [basic docker-compose.yml file](docker-compose,yml) that will build images of the code and setup a development server with container hot reload locally. The development environment can be started with the following command:
 ```
 $ docker-compose up --build
 ```
@@ -62,11 +62,13 @@ Which should return a list containing info about the images and their tags, date
 </br>
 
 #### Setting up the environment variables
-In the repository root is a example file for creating an environment variable file that docker-compose will pick up.
+In the repository root is a example file for creating environment variable files that docker-compose will pick up.
 
-As of now (23.3 2021), the only environment variable needed is a link to the backend API endpoint, Syntax-related matters are found in the [examplefile!](./.prod-variables.env.example)
+Firstly, place your OWM API-key in a .backend.env-file ; Here is [an example .backend.env file](./backend/.env.example) showing preferred syntax. Copy this file and create a file called ".backend.env" where you place your API-key and other environment related data.
 
-<b>OBS!</b> The official environment file docker-compose-prod.yml is looking for is to be called ".prod-variables.env" <b>OBS!</b></br>
+As of now (23.3 2021), the only environment variables needed are a link to the backend API endpoint and an OWM API-key, Syntax-related matters are found in the examplefiles! [.backend.env](./.backend.env.example) & [.prod-variables.env](./.prod-variables.env.example)
+
+<b>OBS!</b> The official environment files are called ".prod-variables.env" & ".backend.env". Docker-compose is looking for these and will not find them unless correcly named <b>OBS!</b></br>
 </br>
   
 #### Running the application
