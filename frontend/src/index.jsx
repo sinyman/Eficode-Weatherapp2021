@@ -6,6 +6,7 @@ const baseURL = process.env.ENDPOINT;
 
 const getWeatherFromApi = async () => {
   try {
+    console.log(`${baseURL}/weather`); // eslint-disable-line no-console
     const response = await fetch(`${baseURL}/weather`);
     return response.json();
   } catch (error) {

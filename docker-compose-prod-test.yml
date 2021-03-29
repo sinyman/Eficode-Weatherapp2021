@@ -1,0 +1,14 @@
+# TEST Production docker-compose.yml file that uses project root
+# Dockerfile
+
+version: '3'
+
+services:
+  application:
+    command: npm start
+    # Alternatively build your own images as you go with "build:"
+    build: .
+    ports:
+      - '80:9000'
+    env_file:
+      - .super.env

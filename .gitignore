@@ -1,3 +1,5 @@
+## Project root .gitignore
+
 # OSX
 .DS_Store
 
@@ -10,4 +12,8 @@ node_modules
 # Environment variables
 .prod-variables.env
 .backend.env
+.super.env
+
+# Build
+./frontend/dist/*
 

@@ -1,6 +1,7 @@
 // Removed for ESLint reasons
 // const debug = require('debug',)('weathermap',);
 
+const serve = require('koa-static',);
 const Koa = require('koa',);
 const router = require('koa-router',)();
 const fetch = require('node-fetch',);
@@ -14,6 +15,8 @@ const targetCity = process.env.TARGET_CITY || 'Helsinki,fi';
 const port = process.env.PORT || 9000;
 
 const app = new Koa();
+
+app.use(serve('build',),);
 
 // Cross origin resource sharing
 app.use(cors(),);
