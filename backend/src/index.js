@@ -16,6 +16,8 @@ const port = process.env.PORT || 9000;
 
 const app = new Koa();
 
+// Serve front end production build
+// through static files located in ./build
 app.use(serve('build',),);
 
 // Cross origin resource sharing
